@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # clone the repository
 git clone https://${2}@github.com/${3}/${4}.git
