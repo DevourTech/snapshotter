@@ -1,0 +1,17 @@
+name: "Snappy"
+description: "Generate a snapshot version based on timestamp and commit hash"
+author: "rohan23chhabra@gmail.com"
+
+inputs:
+  BASE_VERSION:
+    description: "The base semantic version. For example, v1.2.3"
+    required: true
+    default: "v0.0.0"
+
+outputs:
+  SNAPSHOT_VERSION:
+    description: "The generated snapshot version"
+
+runs:
+  using: docker
+  image: Dockerfile
