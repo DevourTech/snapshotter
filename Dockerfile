@@ -1,8 +1,12 @@
 FROM golang
 
-ADD entrypoint.sh .
-ADD action.yml .
+#ENV GOPATH=/go
+RUN mkdir -p /go/src/github.com/devourtech/app
 
-RUN chmod +x ./entrypoint.sh
+ADD . /go/src/github.com/devourtech/app
 
-ENTRYPOINT ["./entrypoint.sh"]
+ #RUN export GOPATH=/go &$ cd /go/src/github.com/devourtech/app && \   # go build -o ./cmd/snappy ./cmd/main.go && \   # chmod 777 ./cmd/snappy
+RUN chmod +x /go/src/github.com/devourtech/app/entrypoint.sh
+
+ENTRYPOINT ["/go/src/github.com/devourtech/app/entrypoint.sh"]
+
