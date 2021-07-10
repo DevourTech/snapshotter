@@ -8,4 +8,4 @@ ADD action.yml .
 
 RUN chmod +x ./entrypoint.sh
 
-ENTRYPOINT ["sh","./entrypoint.sh"]
+ENTRYPOINT ["/bin/bash","./entrypoint.sh"]
