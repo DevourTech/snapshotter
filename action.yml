@@ -15,7 +15,9 @@ outputs:
 runs:
   using: docker
   image: Dockerfile
+  args:
+    - ${{ inputs.BASE_VERSION }}
 
 branding:
-  icon: at-sign
+  icon: camera
   color: orange
