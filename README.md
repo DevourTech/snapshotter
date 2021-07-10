@@ -1,6 +1,6 @@
-# Snappy
+# Snapshotter
 
-Snappy is a Github Action which creates a snapshot tag
+Snapshotter is a Github Action which creates a snapshot tag
 using the commit SHA and the current timestamp.
 
 ## Inputs

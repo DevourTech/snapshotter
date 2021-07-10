@@ -8,9 +8,9 @@ import (
 
 const (
 	timestampFormat = "20060102150405"
-	baseVersionEnv = "BASE_VERSION"
+	baseVersionEnv = "INPUT_BASE_VERSION"
 	commitHashEnv = "GITHUB_SHA"
-	snapshotVersionEnv = "SNAPSHOT_VERSION"
+	snapshotVersionEnv = "OUTPUT_SNAPSHOT_VERSION"
 	shortCommitHashLength = 12
 	separator = "-"
 )
