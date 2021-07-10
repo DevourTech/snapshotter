@@ -7,6 +7,15 @@ inputs:
     description: "The base semantic version. For example, v1.2.3"
     required: true
     default: "v0.0.0"
+  GITHUB_TOKEN:
+    description: "The secret access token used to authenticate to GitHub"
+    required: true
+  GITHUB_USERNAME:
+    description: "The username used to login to GitHub"
+    required: true
+  GITHUB_REPOSITORY:
+    description: "The repository for which tag is to be generated for the latest commit"
+    required: true
 
 outputs:
   SNAPSHOT_VERSION:
@@ -17,6 +26,9 @@ runs:
   image: Dockerfile
   args:
     - ${{ inputs.BASE_VERSION }}
+    - ${{ inputs.GITHUB_TOKEN }}
+    - ${{ inputs.GITHUB_USERNAME }}
+    - ${{ inputs.GITHUB_REPOSITORY }}
 
 branding:
   icon: camera

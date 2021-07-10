@@ -13,5 +13,8 @@ jobs:
         uses: ./
         with:
           BASE_VERSION: v0.0.0
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_USERNAME: DevourTech
+          GITHUB_REPOSITORY: snapshotter
       - name: Print snapshot for testing
         run: echo "${{ steps.create.outputs.SNAPSHOT_VERSION }}"
