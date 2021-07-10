@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#get the timestamp
-timestamp=$(date "+%Y%m%d%H%M%S")
+#get the latest commit timestamp
+timestamp=$(TZ=UTC git show --quiet --date='format-local:%Y%m%d%H%M%S' --format="%cd")
 echo $timestamp
 
 #read commit hash from env variable
