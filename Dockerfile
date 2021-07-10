@@ -1,6 +1,5 @@
 FROM golang
 
-WORKDIR /app
 ADD entrypoint.sh .
 ADD action.yml .
 
