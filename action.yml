@@ -1,4 +1,4 @@
-name: "Snappy"
+name: "Snapshotter"
 description: "Generate a snapshot version based on timestamp and commit hash"
 author: "rohan23chhabra@gmail.com"
 
@@ -15,3 +15,7 @@ outputs:
 runs:
   using: docker
   image: Dockerfile
+
+branding:
+  icon: at-sign
+  color: orange
