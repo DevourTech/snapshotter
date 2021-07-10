@@ -1,4 +1,6 @@
-FROM golang:1.16
+FROM ubuntu
+
+RUN apt-get update -y && apt-get upgrade -y && apt-get install git -y
 
 WORKDIR /app
 ADD entrypoint.sh .
