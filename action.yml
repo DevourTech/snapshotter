@@ -17,5 +17,5 @@ runs:
   image: Dockerfile
 
 branding:
-  icon: at-sign
+  icon: camera
   color: orange

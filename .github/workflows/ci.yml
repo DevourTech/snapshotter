@@ -1,0 +1,17 @@
+name: Snapshotter testing
+
+on: [push, pull_request]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Create snapshot
+        id: create
+        uses: ./
+        with:
+          BASE_VERSION: v0.0.0
+      - name: Print snapshot for testing
+        run: echo "${{ steps.create.outputs.SNAPSHOT_VERSION }}"
