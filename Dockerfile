@@ -4,6 +4,7 @@ FROM golang:1.16
 
 RUN mkdir -p /go/src/github.com/devourtech/app
 ADD . /go/src/github.com/devourtech/app
+COPY .git /go/src/github.com/devourtech/app
 
 #RUN export GOPATH=/go && \
 #    cd /go/src/github.com/devourtech/app && \
