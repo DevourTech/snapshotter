@@ -1,16 +1,11 @@
-FROM golang:1.16
+FROM ubuntu
 
-#ENV GOPATH=/go
+RUN apt-get update -y && apt-get upgrade -y && apt-get install git -y
 
-RUN mkdir -p /go/src/github.com/devourtech/app
-ADD . /go/src/github.com/devourtech/app
-COPY .git /go/src/github.com/devourtech/app
+WORKDIR /app
+ADD entrypoint.sh .
+ADD action.yml .
 
-#RUN export GOPATH=/go && \
-#    cd /go/src/github.com/devourtech/app && \
-#    go build -o ./cmd/snappy ./cmd/main.go && \
-#    chmod 777 ./cmd/snappy
+RUN chmod +x ./entrypoint.sh
 
-RUN chmod +x /go/src/github.com/devourtech/app/entrypoint.sh
-
-ENTRYPOINT ["/go/src/github.com/devourtech/app/entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]

@@ -17,9 +17,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Create tag with Github SHA and timestamp
-      uses: DevourTech/snapshotter@v1.1
+      uses: DevourTech/snapshotter@v1.2.1
       with:
         BASE_VERSION: v0.0.0
+        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_USERNAME: <Your GitHub username>
+        GITHUB_REPOSITORY: <Repository for which you want the tag to be released>
 ```
 
 ## Options
@@ -31,6 +34,24 @@ jobs:
 Base semantic version used to create snapshot. <br>
 **Eg. v3.4.3**
 <br>
+
+- `GITHUB_TOKEN` (Required)
+
+Github Token used to authenticate to GitHub.
+<br>
+
+- `GITHUB_USERNAME` (Required)
+
+Username used to login to GitHub <br>
+**Eg. DevourTech**
+<br>
+
+- `GITHUB_REPOSITORY` (Required)
+
+Repository for which the tag is supposed to be generated on the latest commit. <br>
+**Eg. snapshotter**
+<br>
+
 
 ###  Outputs
 - `SNAPSHOT_VERSION`
